@@ -39,7 +39,7 @@ const Sidebar = props => {
   const pages = [
     {
       title: 'Tracks',
-      href: '/dashboard',
+      href: '/tracks',
       icon: <DirectionsCar />
     },
     {

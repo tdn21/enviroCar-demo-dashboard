@@ -1,43 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/styles';
-import { Typography, Link } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/styles';
+import { useMediaQuery } from '@material-ui/core';
+
+import Sidebar from './components/sidebar/sidebar';
+import Topbar from './components/topbar/topbar';
+import Footer from './components/footer/footer';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        padding: theme.spacing(4)
+  root: {
+    paddingTop: 56,
+    height: '100%',
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: 64
     }
+  },
+  shiftContent: {
+    paddingLeft: 240
+  },
+  content: {
+    height: '100%'
+  }
 }));
 
-const Footer = props => {
-    const { className, ...rest } = props;
-  
-    const classes = useStyles();
-  
-    return (
-      <div
-        {...rest}
-        className={clsx(classes.root, className)}
-      >
-        <Typography variant="body1">
-          <Link
-            component="a"
-            href="https://www.envirocar.org/?lng=en"
-            target="_blank"
-          >
-            EnviroCar
-          </Link>
-        </Typography>
-        <Typography variant="caption">
-          52°North Initiative for Geospatial Open Source Software GmbH
-        </Typography>
-      </div>
-    );
+const Main = props => {
+  const { children } = props;
+
+  const classes = useStyles();
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
+    defaultMatches: true
+  });
+
+  const [openSidebar, setOpenSidebar] = useState(false);
+
+  const handleSidebarOpen = () => {
+    setOpenSidebar(true);
   };
 
-  Footer.PropTypes = {
-      className: PropTypes.string
+  const handleSidebarClose = () => {
+    setOpenSidebar(false);
   };
 
-  export default Footer;
+  const shouldOpenSidebar = isDesktop ? true : openSidebar;
+
+  return (
+    <div
+      className={clsx({
+        [classes.root]: true,
+        [classes.shiftContent]: isDesktop
+      })}
+    >
+      <Topbar onSidebarOpen={handleSidebarOpen} />
+      <Sidebar
+        onClose={handleSidebarClose}
+        open={shouldOpenSidebar}
+        variant={isDesktop ? 'persistent' : 'temporary'}
+      />
+      <main className={classes.content}>
+        {children}
+        <Footer />
+      </main>
+    </div>
+  );
+};
+
+Main.propTypes = {
+  children: PropTypes.node
+};
+
+export default Main;
