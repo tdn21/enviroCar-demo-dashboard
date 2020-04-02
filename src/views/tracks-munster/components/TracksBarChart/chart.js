@@ -1,4 +1,4 @@
-import palette from '../../../../theme/palette';
+import palette from 'theme/palette';
 
 export const data = {
     labels: ['Nov 2019', 'Dec 2019', 'Jan 2020', 'Feb 2020', 'Mar 2020'],
