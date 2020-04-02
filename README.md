@@ -1,5 +1,5 @@
-# enviroCar Demo Dashboard
-This repository contains source code for React application powered by deck.gl for animated map visualization of EnviroCar tracks data.<br /> 
+# EnviroCar Demo Dashboard
+This repository contains source code for React application powered by deck.gl for animated map visualization of EnviroCar tracks data.<br /><br />
 For live demonstration visit: [https://alpha-enviro-dashboard.herokuapp.com](https://alpha-enviro-dashboard.herokuapp.com).
 
 ## Status
