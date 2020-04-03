@@ -36,7 +36,7 @@ const Footer = props => {
     );
   };
 
-  Footer.PropTypes = {
+  Footer.propTypes = {
       className: PropTypes.string
   };
 

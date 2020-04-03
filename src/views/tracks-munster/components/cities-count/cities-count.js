@@ -1,8 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { makestyles } from '@material-ui/styles';
-import { Card, CardContent, Grid, Typography, Avatar, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
+import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
 import { Apartment } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
@@ -41,11 +41,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const CitiesCount = props => {
-    const { classname, ...rest } = props;
-    
-    const classes = useStyles();
+  const { className, ...rest } = props;
 
-    return (
+  const classes = useStyles();
+
+  return (
     <Card
       {...rest}
       className={clsx(classes.root, className)}
@@ -86,7 +86,7 @@ const CitiesCount = props => {
 };
 
 CitiesCount.propTypes = {
-    className: PropTypes.string
+  className: PropTypes.string
 };
 
 export default CitiesCount;

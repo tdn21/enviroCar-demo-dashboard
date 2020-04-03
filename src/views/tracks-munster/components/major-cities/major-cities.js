@@ -14,7 +14,7 @@ import {
     ListItemText,
     IconButton
 } from '@material-ui/core';
-import { ArrowRightIcon } from '@material-ui/icons';
+import { ArrowRight } from '@material-ui/icons';
 
 import Data from './data';
 
@@ -60,13 +60,13 @@ const useStyles = makeStyles(() => ({
                 >
                   <ListItemText
                     primary={city.name}
-                    secondary={`${cities.tracks_count} tracks in a Recording period of ${product.recording_period}`}
+                    secondary={`${cities.tracks_count} tracks in a Recording period of ${cities.recording_period}`}
                   />
                   <IconButton
                     edge="end"
                     size="small"
                   >
-                    <ArrowRightIcon />
+                    <ArrowRight />
                   </IconButton>
                 </ListItem>
               ))}
@@ -79,7 +79,7 @@ const useStyles = makeStyles(() => ({
               size="small"
               variant="text"
             >
-              View all <ArrowRightIcon />
+              View all <ArrowRight />
             </Button>
           </CardActions>
         </Card>

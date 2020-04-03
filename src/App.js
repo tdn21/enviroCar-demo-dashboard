@@ -4,7 +4,7 @@ import { createBrowserHistory } from 'history';
 import { Chart } from 'react-chartjs-2';
 import { ThemeProvider } from '@material-ui/styles';
 
-import { chartjs } from './helpers';
+import { chartjs } from './utils';
 import theme from './theme';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './assets/scss/index.scss';

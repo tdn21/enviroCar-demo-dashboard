@@ -6,7 +6,7 @@ import { Divider, Drawer } from '@material-ui/core';
 import DirectionsCar from '@material-ui/icons/DirectionsCar';
 import ImageIcon from '@material-ui/icons/Image';
 
-import SidebarNav from './components/SidebarNav';
+import SidebarNav from './components/SidebarNav/SidebarNav';
 
 const useStyles = makeStyles(theme => ({
   drawer: {

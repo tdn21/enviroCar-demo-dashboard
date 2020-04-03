@@ -12,13 +12,13 @@ const Routes = () => {
         <Redirect
           exact
           from="/"
-          to="/tracks"
+          to="/munster/tracks"
         />
         <RouteWithLayout
           component={TracksMunster}
           exact
           layout={Main}
-          path="/tracks"
+          path="/munster/tracks"
         />
         {/* <RouteWithLayout
           component={NotFoundView}

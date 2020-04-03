@@ -99,7 +99,7 @@ function MapGl({ data, viewport, style, highlightedMonth, month }) {
     );
 }
 
-export default class CustomMap extends Component {
+class CustomMap extends Component {
     state={
         style: 'mapbox://styles/mapbox/dark-v10',
         viewport: INITIAL_VIEW_STATE,
@@ -142,3 +142,5 @@ export default class CustomMap extends Component {
           )
       }
 }
+
+export default CustomMap;

@@ -9,7 +9,7 @@ import {
     Typography,
     Avatar
 } from '@material-ui/core';
-import { InsertChartIcon } from '@material-ui/icons';
+import { InsertChart } from '@material-ui/icons';
 
 // Styles
 const useStyles = makeStyles(theme => ({
@@ -76,7 +76,7 @@ const VisualizedTracksCount = props => {
             </Grid>
             <Grid item>
               <Avatar className={classes.avatar}>
-                <InsertChartIcon className={classes.icon} />
+                <InsertChart className={classes.icon} />
               </Avatar>
             </Grid>
           </Grid>

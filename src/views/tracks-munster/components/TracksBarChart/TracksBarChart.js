@@ -7,12 +7,13 @@ import {
     Card,
     CardHeader,
     CardActions,
+    CardContent,
     Divider,
     Button
 } from '@material-ui/core';
 import {
-    ArrowDropDownIcon,
-    ArrowRightIcon
+    ArrowDropDown,
+    ArrowRight
 } from '@material-ui/icons';
 
 import { data, options } from './chart';
@@ -45,7 +46,7 @@ const TracksBarChart = props => {
             size="small"
             variant="text"
             >
-            Last 5 months <ArrowDropDownIcon />
+            Last 5 months <ArrowDropDown />
             </Button>
         }
         title="Tracks"
@@ -66,7 +67,7 @@ const TracksBarChart = props => {
             size="small"
             variant="text"
         >
-            Overview <ArrowRightIcon />
+            Overview <ArrowRight />
         </Button>
         </CardActions>
     </Card>
