@@ -1,55 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/styles';
-import { useMediaQuery } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
-import Topbar from './components/topbar/topbar';
-import Footer from './components/footer/footer';
+import Topbar from './topbar/topbar';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {
-    paddingTop: 56,
-    height: '100%',
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: 64
-    }
-  },
-  shiftContent: {
-    paddingLeft: 240
+    paddingTop: 64,
+    height: '100%'
   },
   content: {
     height: '100%'
   }
 }));
 
-const Main = props => {
+const Minimal = props => {
   const { children } = props;
 
   const classes = useStyles();
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
-    defaultMatches: true
-  });
 
   return (
-    <div
-      className={clsx({
-        [classes.root]: true,
-        [classes.shiftContent]: isDesktop
-      })}
-    >
+    <div className={classes.root}>
       <Topbar />
-      <main className={classes.content}>
-        {children}
-        <Footer />
-      </main>
+      <main className={classes.content}>{children}</main>
     </div>
   );
 };
 
-Main.propTypes = {
-  children: PropTypes.node
+Minimal.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string
 };
 
-export default Main;
+export default Minimal;
