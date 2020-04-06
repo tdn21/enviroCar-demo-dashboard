@@ -44,7 +44,7 @@ const NotFound = () => {
             <img
               alt="Under development"
               className={classes.image}
-              src="/images/not_found.svg"
+              src="/images/not_found_earth.jpg"
             />
           </div>
         </Grid>
