@@ -6,6 +6,10 @@ export const data = {
       {
         label: 'Tracks',
         backgroundColor: palette.primary.main,
+        barThickness: 12,
+        maxBarThickness: 10,
+        barPercentage: 0.5,
+        categoryPercentage: 0.5,
         data: [49, 31, 16, 1, 3]
       }
     ]
@@ -32,10 +36,6 @@ export const data = {
     scales: {
       xAxes: [
         {
-          barThickness: 12,
-          maxBarThickness: 10,
-          barPercentage: 0.5,
-          categoryPercentage: 0.5,
           ticks: {
             fontColor: palette.text.secondary
           },
